@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/global.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+			integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+			crossorigin="anonymous"
+		/>
+		<title>Serve the Planet | Login</title>
+	</head>
+	<body>
+		<div class="signinpage">
+			<div class="card logo flex flex-col">
+				<h2>
+					<i class="fab fa-connectdevelop"></i> <span>Serve</span> the
+					Planet
+				</h2>
+				<br />
+				<form action="" method="POST">
+					<div class="forminput flex flex-col">
+						<label for="login">Username</label>
+						<input
+							type="email"
+							name="login"
+							placeholder="Enter email"
+							required
+						/>
+					</div>
+
+					<div class="forminput flex flex-col">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							name="password"
+							placeholder="Enter   password"
+							required
+						/>
+					</div>
+
+					<div>
+						<p id="loginstatus">
+							Temp holder for login status, Will be hidden and
+							will operate with JS
+						</p>
+					</div>
+
+					<button type="submit" class="btn">Submit</button>
+					<input
+						type="checkbox"
+						name="rememberme"
+						id="rememberme"
+						checked
+					/>
+					<label class="rem" for="rememeberme" id="remember"
+						>Remember Me</label
+					>
+				</form>
+
+				<div class="forgot">
+					<p><a href="#">Forgot Username or Password?</a></p>
+				</div>
+
+				<div id="accreg">
+					<p>
+						<a href="./register.html" target="_blank"
+							>Don't have an account? Register
+							<i class="fas fa-angle-right"></i>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

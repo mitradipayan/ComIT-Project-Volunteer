@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/global.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+			integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+			crossorigin="anonymous"
+		/>
+		<title>Serve the Planet | Explore Opportunities</title>
+	</head>
+	<body>
+		<!-- header section -->
+		<div class="container">
+			<header class="header logo flex flex-spbtw">
+				<h1>
+					<i class="fab fa-connectdevelop"></i> <span>Serve</span> the
+					Planet
+				</h1>
+			</header>
+		</div>
+
+		<section class="opportunities">
+			<div class="container">
+				<div>
+					<h1>
+						<span id="sp1">Explore</span>
+						<i class="fas fa-angle-right"></i>
+						<span id="sp2">Connect</span>
+						<i class="fas fa-angle-right"></i>
+						<span id="sp3">Serve</span>
+					</h1>
+				</div>
+				<div id="summary">
+					<h2>
+						Find the topic you are most passionate about, somthing
+						you would like to leave a mark in the sands of time,
+						check an organization that is aligned with your goals
+						and apply for the role
+					</h2>
+				</div>
+			</div>
+		</section>
+
+		<!-- Opportunity list -->
+		<section class="opplist">
+			<div class="grid-container">
+				<!-- Search bar section -->
+				<div class="search">
+					<div class="background">
+						<p class="searchtitle">Causes that interest me</p>
+						<div class="searchselect">
+							<select
+								name="causes"
+								id="causes"
+								title="Causes that interest me"
+							>
+								<option value="">Choose causes...</option>
+								<option value="relief">
+									Emergency Relief Work
+								</option>
+								<option value="caregiving">Caregiving</option>
+								<option value="swachbharat">
+									Swachh Bharat
+								</option>
+								<option value="animalcare">Animal Care</option>
+								<option value="teaching">Teaching</option>
+							</select>
+							<span class="custom-arrow"
+								><i class="fas fa-angle-down"></i
+							></span>
+						</div>
+					</div>
+					<div class="background">
+						<p class="searchtitle">How can I help...</p>
+						<div class="searchselect">
+							<select
+								name="causes"
+								id="causes"
+								title="How I can help"
+							>
+								<option value="">Choose activities...</option>
+								<option value="relief" title="IT support">
+									IT systems support
+								</option>
+								<option
+									value="caregiving"
+									title="Accounting and auditing"
+								>
+									Accounting
+								</option>
+								<option
+									value="swachbharat"
+									title="Legal advising, Human rights advocacy, Advocacy "
+								>
+									Legal
+								</option>
+								<option
+									value="animalcare"
+									title="Consultant, Advisor"
+								>
+									Organizational leadership
+								</option>
+								<option
+									value="teaching"
+									title="Data analysis, Evaluation, Measurement, Research, Presentation"
+								>
+									Research
+								</option>
+							</select>
+							<span class="custom-arrow"
+								><i class="fas fa-angle-down"></i
+							></span>
+						</div>
+					</div>
+					<div class="background">
+						<p class="searchtitle">Time Commitment</p>
+						<div class="option">
+							<input
+								type="checkbox"
+								name="timecommitment"
+								id="all"
+								value="all"
+							/>
+							<label for="all" class="searchtitle">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All</label
+							>
+						</div>
+						<div class="timecommitment">
+							<div class="option">
+								<input
+									type="radio"
+									id="onetime"
+									name="timecommitment"
+									value="onetime"
+								/>
+								<label for="onetime"
+									>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One time
+									only</label
+								>
+							</div>
+
+							<div class="option">
+								<input
+									type="radio"
+									id="shortterm"
+									name="timecommitment"
+									value="shortterm"
+								/>
+								<label for="shortterm">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Short term ( <
+									3 months )</label
+								>
+							</div>
+
+							<div class="option">
+								<input
+									type="radio"
+									id="longterm"
+									name="timecommitment"
+									value="longterm"
+								/>
+								<label for="longterm">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Long term ( >
+									6 months )</label
+								>
+							</div>
+						</div>
+					</div>
+					<div class="background">
+						<p class="searchtitle">Location Preferences</p>
+						<div class="option">
+							<div class="searchselect">
+								<select
+									name="locpref"
+									id="locpref"
+									title="Location Preference - State"
+								>
+									<option value="">Preferred State</option>
+									<option value="KA" title="Karnataka">
+										Karnataka
+									</option>
+									<option value="MH" title="Maharashtra">
+										Maharashtra
+									</option>
+								</select>
+								<span class="custom-arrow"
+									><i class="fas fa-angle-down"></i
+								></span>
+							</div>
+						</div>
+						<div class="option">
+							<div class="searchselect">
+								<select
+									name="locpref"
+									id="locpref"
+									title="Location Preference - City"
+								>
+									<option value="">Preferred City</option>
+									<option value="BLR" title="Bangalore">
+										Bangalore
+									</option>
+									<option value="MUM" title="Mumbai">
+										Mumbai
+									</option>
+								</select>
+								<span class="custom-arrow"
+									><i class="fas fa-angle-down"></i
+								></span>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="background"></div> -->
+				</div>
+				<!-- Opportunity cards section -->
+				<div class="opps">
+					<div class="oppscard card">
+						<div class="card-container">
+							<div class="logo">
+								<div class="logoimage">
+									<img src="./img/wwf.png" alt="" />
+								</div>
+								<p>World Wildlife Fund</p>
+							</div>
+							<div class="logodesc">
+								<div class="logotitle">
+									<p>Job title description</p>
+								</div>
+								<div class="activitydesc">
+									<p>Activity1 / Activity2</p>
+								</div>
+								<div class="oppdesc">
+									<p>
+										Lorem ipsum dolor sit, amet consectetur
+										adipisicing elit. Ullam quam earum
+										repudiandae suscipit dolor expedita
+										obcaecati odit nisi, dignissimos fugiat.
+										Totam eveniet consectetur provident rem
+										eaque animi, suscipit ab fugit.25
+									</p>
+								</div>
+								<div class="vacancy">
+									<label for="vacancy"
+										>Number of volunteers required:</label
+									>
+									<span id="vacancy">5</span>
+								</div>
+								<div class="time-hours">
+									<p>
+										<i class="far fa-clock"></i>
+										&nbsp;&nbsp;2-4 hours / week
+									</p>
+								</div>
+								<div class="time-duration">
+									<p>
+										<i class="far fa-calendar-alt"></i>
+										&nbsp;&nbsp;1 year
+									</p>
+								</div>
+								<div class="more">
+									<p>
+										<a href="#" target="_blank"
+											>Details
+											<i class="fas fa-angle-right"></i
+										></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="oppscard card"></div>
+					<div class="oppscard card"></div>
+					<div class="oppscard card"></div>
+					<div class="oppscard card"></div>
+					<div class="oppscard card"></div>
+					<div class="oppscard card"></div>
+					<div class="oppscard card"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer section -->
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container flex flex-spbtw">
+				<div class="organization logo">
+					<h3>
+						<i class="fab fa-connectdevelop"></i>
+						<span>Serve</span> the Planet
+					</h3>
+					<br />
+					<address>
+						HM World City <br />
+						JP Nagar 9th Phase <br />
+						Bangalore 560062 <br />
+						<br />
+						Ph: +91-80-3333-4444
+					</address>
+				</div>
+
+				<div class="grid">
+					<div>
+						<h4>ABOUT</h4>
+						<br />
+						<p><a href="#"> Who we are</a></p>
+						<p><a href="#">Contact us</a></p>
+					</div>
+					<div>
+						<h4>FOR INFORMATION</h4>
+						<br />
+						<p><a href="#">How you benefit</a></p>
+						<p><a href="#"> What you learn</a></p>
+						<p><a href="#">Why you need to serve</a></p>
+					</div>
+				</div>
+
+				<div class="social flex flex-col">
+					<h4>Follow us on:</h4>
+					<br />
+					<div>
+						<a href="#"
+							><i class="fab fa-twitter-square fa-2x"></i
+						></a>
+						<a href="#"
+							><i class="fab fa-facebook-square fa-2x"></i
+						></a>
+						<a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+						<a href="#"
+							><i class="fab fa-google-plus-square fa-2x"></i
+						></a>
+					</div>
+				</div>
+			</div>
+			>
+		</footer>
+	</body>
+</html>

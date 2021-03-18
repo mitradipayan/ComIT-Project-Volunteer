@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/global.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+			integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+			crossorigin="anonymous"
+		/>
+		<title>Serve the Planet | Register</title>
+	</head>
+	<body>
+		<div class="container register">
+			<div class="card logo">
+				<h2>
+					<i class="fab fa-connectdevelop"></i> <span>Serve</span> the
+					Planet
+				</h2>
+				<br />
+				<h3>Register to create an account</h3>
+				<br />
+				<div class="checkwrap">
+					<label for="">Registration for</label>
+					<input type="radio" name="entitytype" id="entitytype" />
+					<label for="org">Organization</label>
+					<input type="radio" name="entitytype" id="entitytype" />
+					<label for="ind">Individual</label>
+				</div>
+				<div class="my-2">
+					<form action="" method="POST">
+						<div class="splitcol-2 flex">
+							<div class="forminput flex flex-col">
+								<label for="name">NAME</label>
+								<input
+									type="text"
+									name="name"
+									required
+									placeholder="Enter name"
+								/>
+							</div>
+							<div class="forminput flex flex-col">
+								<label for="username">USERNAME</label>
+								<input
+									type="email"
+									name="username"
+									placeholder="Enter email"
+									required
+								/>
+							</div>
+						</div>
+
+						<div class="splitcol-2 flex">
+							<div class="forminput flex flex-col">
+								<label for="pwd">PASSWORD</label>
+								<input
+									type="password"
+									name="pwd"
+									placeholder="Enter password"
+									required
+								/>
+							</div>
+
+							<div class="forminput flex flex-col">
+								<label for="pwdrepeat">CONFIRM PASSWORD</label>
+								<input
+									type="password"
+									name="pwdrepeat"
+									placeholder="Repeat password"
+									required
+								/>
+							</div>
+						</div>
+
+						<div class="splitcol-2 flex">
+							<div class="forminput flex flex-col">
+								<label for="country">COUNTRY</label>
+								<div class="custom-select flex flex-col">
+									<select name="country" id="country">
+										<option value="India">India</option>
+										<option value="Canada">Canada</option>
+										<option value="USA">
+											United States
+										</option>
+									</select>
+									<span class="custom-arrow"
+										><i class="fas fa-angle-down"></i
+									></span>
+								</div>
+							</div>
+							<div class="forminput flex flex-col">
+								<label for="username">CITY</label>
+								<input
+									type="password"
+									name="password"
+									placeholder="Enter city"
+									required
+								/>
+							</div>
+						</div>
+
+						<button type="submit" class="btn">Register</button>
+					</form>
+				</div>
+				<div id="acclogin">
+					<p>
+						<a href="./login.html" target="_blank"
+							>Already have an account? Login
+							<i class="fas fa-angle-right"></i>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
