@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const { CONNECTION_STRING } = require("./.env");
 
-mongoose.connect(CONNECTION_STRING, {
+mongoose.connect(process.env.CONNECTION_STRING, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 }).catch((err) {
