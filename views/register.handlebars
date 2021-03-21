@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/global.css" />
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="/css/global.css" />
+		<link rel="stylesheet" href="/css/style.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -24,15 +24,16 @@
 				<br />
 				<h3>Register to create an account</h3>
 				<br />
-				<div class="checkwrap">
-					<label for="">Registration for</label>
-					<input type="radio" name="entitytype" id="entitytype" />
-					<label for="org">Organization</label>
-					<input type="radio" name="entitytype" id="entitytype" />
-					<label for="ind">Individual</label>
-				</div>
-				<div class="my-2">
+				{{!-- start of form --}}
+				<div class="my-1">
 					<form action="" method="POST">
+						<div class="checkwrap">
+							<label for="">Registration for</label>
+							<input type="radio" name="category" id="organization" value="organization" />
+							<label for="org">Organization</label>
+							<input type="radio" name="category" id="individual" value="individual" />
+							<label for="ind">Individual</label>
+						</div>
 						<div class="splitcol-2 flex">
 							<div class="forminput flex flex-col">
 								<label for="name">NAME</label>
@@ -59,7 +60,7 @@
 								<label for="pwd">PASSWORD</label>
 								<input
 									type="password"
-									name="pwd"
+									name="password"
 									placeholder="Enter password"
 									required
 								/>
@@ -69,7 +70,7 @@
 								<label for="pwdrepeat">CONFIRM PASSWORD</label>
 								<input
 									type="password"
-									name="pwdrepeat"
+									name="cnfpassword"
 									placeholder="Repeat password"
 									required
 								/>
@@ -95,8 +96,8 @@
 							<div class="forminput flex flex-col">
 								<label for="username">CITY</label>
 								<input
-									type="password"
-									name="password"
+									type="text"
+									name="city"
 									placeholder="Enter city"
 									required
 								/>
@@ -106,6 +107,7 @@
 						<button type="submit" class="btn">Register</button>
 					</form>
 				</div>
+				{{!-- end of form --}}
 				<div id="acclogin">
 					<p>
 						<a href="/login" target="_blank"

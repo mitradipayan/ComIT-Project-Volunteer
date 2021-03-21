@@ -2,7 +2,7 @@ const mongoose = require("../db");
 const cuid = require("cuid");
 const { isEmail } = require("validator");
 
-const userCategories = ["organization", "individual"];
+const entityType = ["organization", "individual"];
 
 const userSchema = mongoose.Schema({
 	_id: { type: String, default: cuid },
@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
 	city: { type: String, required: true },
 	category: {
 		type: String,
-		enum: userCategories,
+		enum: entityType,
 	},
 });
 
