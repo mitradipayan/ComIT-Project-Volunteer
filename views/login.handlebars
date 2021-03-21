@@ -45,8 +45,9 @@
 
 					<div>
 						<p id="loginstatus">
-							Temp holder for login status, Will be hidden and
-							will operate with JS
+							{{#if loginStatusMessage}}
+							<span>{{loginStatusMessage}}</span>
+							{{/if}}
 						</p>
 					</div>
 

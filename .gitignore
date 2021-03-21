@@ -2,5 +2,3 @@ node_modules
 *.bak
 *~
 .env
-.credentials.development
-db.js
