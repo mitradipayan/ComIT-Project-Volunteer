@@ -1,0 +1,103 @@
+[
+	{
+		"orgName": "World Wildlife Fund",
+		"orgLogoUrl": "/img/wwf.png",
+		"title": "Stray dog rehabilitation",
+		"jobDescription": "The job involves creating a database of rescued stray dogs for the purpose of building an IT system for management of dogs",
+		"volunteerRequired": "3",
+		"timeCommitment": "5 hours/week",
+		"timeCommitmentType": "shortterm",
+		"timeDuration": "3 months",
+		"activityType": "systemssupport",
+		"volunteerCause": "animalcare",
+		"location": {
+			"state": "KA",
+			"city": "Bangalore"
+		}
+	},
+
+	{
+		"orgName": "Isha Foundation",
+		"orgLogoUrl": "/img/isha.png",
+		"title": "Cauvery Calling",
+		"jobDescription": "The job involves planting saplings, surveying land, coordinating with farmers and village elders, collecting funds and running campaigns to gain public support for the tree plantation drive",
+		"volunteerRequired": "25",
+		"timeCommitment": "3 hours/week",
+		"timeCommitmentType": "longterm",
+		"timeDuration": "1 year",
+		"activityType": "orgleadership",
+		"volunteerCause": "environment",
+		"location": {
+			"state": "KA",
+			"city": "Mysore"
+		}
+	},
+
+	{
+		"orgName": "Ramakrishna Mission",
+		"orgLogoUrl": "/img/rkm.png",
+		"title": "Community cleanliness",
+		"jobDescription": "The job involves conducting a survey seeking opinions from the community members and the general public on the effectiveness of the Swacch Bharat mission and publishing research report ",
+		"volunteerRequired": "5",
+		"timeCommitment": "5 hours/week",
+		"timeCommitmentType": "onetime",
+		"timeDuration": "15 days",
+		"activityType": "research",
+		"volunteerCause": "swacchbharat",
+		"location": {
+			"state": "MH",
+			"city": "Pune"
+		}
+	},
+
+	{
+		"orgName": "Iskcon",
+		"orgLogoUrl": "/img/iskcon.jpg",
+		"title": "Mid Day meal",
+		"jobDescription": "The job involves research, documentation and office work and supporting collecting funds and running campaigns to acquire sponsors for the mid day meal scheme",
+		"volunteerRequired": "10",
+		"timeCommitment": "3 hours/week",
+		"timeCommitmentType": "longterm",
+		"timeDuration": "1 year",
+		"activityType": "orgleadership",
+		"volunteerCause": "caregiving",
+		"location": {
+			"state": "KA",
+			"city": "Bangalore"
+		}
+	},
+
+	{
+		"orgName": "Helpage India",
+		"orgLogoUrl": "/img/Helpage-India.jpg",
+		"title": "Ashram renovation",
+		"jobDescription": "The job involves supporting accounting work of the renovation activities of the ashram renovation work for the elderly",
+		"volunteerRequired": "3",
+		"timeCommitment": "3 hours/week",
+		"timeCommitmentType": "shortterm",
+		"timeDuration": "1 month",
+		"activityType": "accounting",
+		"volunteerCause": "caregiving",
+		"location": {
+			"state": "MH",
+			"city": "Mumbai"
+		}
+	},
+
+	{
+		"orgName": "Isha Foundation",
+		"orgLogoUrl": "/img/isha.png",
+		"title": "Cauvery Calling",
+		"jobDescription": "The job involves planting saplings, surveying land, coordinating with farmers and village elders, collecting funds and running campaigns to gain public support for the tree plantation drive",
+		"volunteerRequired": "25",
+		"timeCommitment": "3 hours/week",
+		"timeCommitmentType": "longterm",
+		"timeDuration": "1 year",
+		"activityType": "orgleadership",
+		"volunteerCause": "environment",
+		"location": {
+			"state": "KA",
+			"city": "Mysore"
+		}
+	}
+]

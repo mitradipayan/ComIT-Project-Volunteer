@@ -13,6 +13,7 @@ const volunteerCauseType = [
 	"emergency",
 	"caregiving",
 	"swacchbharat",
+	"environment",
 	"animalcare",
 	"teaching",
 ];

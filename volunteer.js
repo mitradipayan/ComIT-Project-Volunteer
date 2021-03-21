@@ -2,6 +2,7 @@ const { static } = require("express");
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const path = require("path");
+const { createUser, cust1 } = require("./services/userServices");
 
 const port = process.env.PORT || 3000;
 
