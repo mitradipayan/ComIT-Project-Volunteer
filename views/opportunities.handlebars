@@ -192,47 +192,43 @@
 				</div>
 				<!-- Opportunity cards section -->
 				<div class="opps">
+					{{#each opportunity}}
 					<div class="oppscard card">
 						<div class="card-container">
 							<div class="logo">
 								<div class="logoimage">
-									<img src="./img/wwf.png" alt="" />
+									<img src={{orgLogoUrl}} alt="" />
 								</div>
-								<p>World Wildlife Fund</p>
+								<p>{{orgName}}</p>
 							</div>
 							<div class="logodesc">
 								<div class="logotitle">
-									<p>Job title description</p>
+									<p>{{title}}</p>
 								</div>
 								<div class="activitydesc">
-									<p>Activity1 / Activity2</p>
+									<p>{{activityType}} - {{volunteerCause}} - {{timeCommitmentType}}</p>
 								</div>
 								<div class="oppdesc">
 									<p>
-										Lorem ipsum dolor sit, amet consectetur
-										adipisicing elit. Ullam quam earum
-										repudiandae suscipit dolor expedita
-										obcaecati odit nisi, dignissimos fugiat.
-										Totam eveniet consectetur provident rem
-										eaque animi, suscipit ab fugit.25
+										{{jobDescription}}
 									</p>
 								</div>
 								<div class="vacancy">
 									<label for="vacancy"
 										>Number of volunteers required:</label
 									>
-									<span id="vacancy">5</span>
+									<span id="vacancy">{{volunteerRequired}}</span>
 								</div>
 								<div class="time-hours">
 									<p>
 										<i class="far fa-clock"></i>
-										&nbsp;&nbsp;2-4 hours / week
+										&nbsp;&nbsp;{{timecommitment}}
 									</p>
 								</div>
 								<div class="time-duration">
 									<p>
 										<i class="far fa-calendar-alt"></i>
-										&nbsp;&nbsp;1 year
+										&nbsp;&nbsp;{{timeDuration}}
 									</p>
 								</div>
 								<div class="more">
@@ -246,13 +242,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="oppscard card"></div>
-					<div class="oppscard card"></div>
-					<div class="oppscard card"></div>
-					<div class="oppscard card"></div>
-					<div class="oppscard card"></div>
-					<div class="oppscard card"></div>
-					<div class="oppscard card"></div>
+					{{/each}}
 				</div>
 			</div>
 		</section>

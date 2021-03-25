@@ -29,7 +29,7 @@
 		"volunteerCause": "environment",
 		"location": {
 			"state": "KA",
-			"city": "Mysore"
+			"city": "Bangalore"
 		}
 	},
 
@@ -96,8 +96,8 @@
 		"activityType": "orgleadership",
 		"volunteerCause": "environment",
 		"location": {
-			"state": "KA",
-			"city": "Mysore"
+			"state": "JH",
+			"city": "Jamshedpur"
 		}
 	}
 ]

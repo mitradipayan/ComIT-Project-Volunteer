@@ -18,7 +18,7 @@ const volunteerCauseType = [
 	"teaching",
 ];
 
-const states = ["Karnataka", "Maharashtra", "Jharkhand"];
+const states = ["KA", "MH", "JH"];
 const cities = ["Bangalore", "Mumbai", "Jamshedpur", "Pune"];
 
 const opportunitySchema = mongoose.Schema({

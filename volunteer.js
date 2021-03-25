@@ -2,8 +2,14 @@ const { static } = require("express");
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const path = require("path");
-const { createUser, cust1 } = require("./services/userServices");
-
+const {
+	renderLoginForm,
+	processLogin,
+} = require("./viewControllers/loginController");
+const {
+	registerUser,
+	renderRegisterForm,
+} = require("./viewControllers/registerController");
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -24,19 +30,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // routes
-
+// --------HOME----------
 app.get("/", (req, res) => {
 	res.render("home");
 });
+// ---------LOGIN------------------
+app.get("/login", renderLoginForm);
+app.post("/login", processLogin);
+// ---------REGISTER--------------
+app.get("/register", renderRegisterForm);
+app.post("/register", registerUser);
 
-app.get("/login", (req, res) => {
-	res.render("login", { layout: null });
-});
-
-app.get("/register", (req, res) => {
-	res.render("register", { layout: null });
-});
-
+// ---------OPPORTUNITIES-------------
 app.get("/opportunities", (req, res) => {
 	res.render("opportunities", { layout: "layout1" });
 });
@@ -53,4 +58,5 @@ app.use((err, req, res, next) => {
 // start the server
 app.listen(port, () => {
 	console.log(`Express started server on port ${port}`);
+	// pushOpp();
 });

@@ -10,14 +10,16 @@ const userSchema = mongoose.Schema({
 	username: {
 		type: String,
 		required: true,
+		unique: true,
 		validate: { validator: isEmail },
 	},
-	password: { type: String, required: true },
+	passwordHash: { type: String, required: true },
 	country: { type: String, required: true },
 	city: { type: String, required: true },
 	category: {
 		type: String,
 		enum: entityType,
+		required: true,
 	},
 });
 
