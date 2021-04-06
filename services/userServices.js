@@ -1,29 +1,54 @@
 const bcrypt = require("bcrypt");
+const { isCuid } = require("cuid");
 const { ConnectionStates } = require("mongoose");
 const User = require("../models/user");
+const { generateJWT } = require("./authenticationServices");
 
-// finds user based on username and password submitted
-// by the user in login page
+// Returns user object based on username and password
+// submitted in login page
 async function findUser(username) {
 	const user = await User.findOne({ username }).exec();
 	if (!user) {
 		return false;
-	} else return user;
+	} else {
+		return user;
+	}
 }
 
+// Finds the username and validates the password and returns
+// either "UserNotFound" or or "true" or "false"
 async function matchPassword(username, password) {
 	const foundUser = await findUser(username);
 	if (!foundUser) return "UserNotFound";
 	else {
-		const isAUthenticated = await bcrypt
+		const isAuthenticated = await bcrypt
 			.compare(password, foundUser.passwordHash)
 			.then((result) => {
-				console.log(result);
 				return result;
 			});
-		if (isAUthenticated) {
-			return true;
+		if (isAuthenticated) {
+			return "Authenticated";
 		} else return false;
+	}
+}
+
+// Validates username and password with dB and returns
+// an object with {JWT and user}
+async function validateLogin(username, password) {
+	const authenticateValue = await matchPassword(username, password);
+	if (authenticateValue === "UserNotFound" || !authenticateValue) {
+		return {
+			jwtString: null,
+			user: null,
+		};
+	} else {
+		// if (authenticateValue === "Authenticated") {
+		const user = await findUser(username);
+		const token = generateJWT(user);
+		return {
+			jwtString: token,
+			user: user,
+		};
 	}
 }
 
@@ -60,16 +85,6 @@ async function createUser(fields) {
 			return { tag: "UserCreated", output: newUser };
 		}
 	}
-
-	// generateHash(fields.password)
-	// 	.then((data) => {
-	// 		console.log(data);
-	// 		new User({
-	// 			...fields,
-	// 			passwordHash: data,
-	// 		}).save();
-	// 	})
-	// 	.catch((error) => console.log(`geterated hash error ${error}`));
 }
 
 module.exports = {
@@ -77,4 +92,5 @@ module.exports = {
 	findUser,
 	matchPassword,
 	generateHash,
+	validateLogin,
 };

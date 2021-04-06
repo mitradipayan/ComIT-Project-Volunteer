@@ -12,7 +12,7 @@
 			integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
 			crossorigin="anonymous"
 		/>
-		<title>Serve the Planet | Register</title>
+		<title>Serve the Planet | Create Opportunity</title>
 	</head>
 	<body>
 		<div class="container register">
@@ -22,61 +22,41 @@
 					Planet
 				</h2>
 				<br />
-				<h3>Register to create an account</h3>
+				<h3>Create opportunity for orgName</h3>
 				<br />
 				{{!-- start of form --}}
 				<div class="my-1">
-					<form action="register" method="POST">
-						<div class="checkwrap">
-							<label for="">Registration for</label>
-							<input type="radio" name="category" id="organization" value="organization" />
-							<label for="organization">Organization</label>
-							<input type="radio" name="category" id="individual" value="individual" />
-							<label for="individual">Individual</label>
-						</div>
+					<form action="createOpportunity" method="POST">
 						<div class="splitcol-2 flex">
 							<div class="forminput flex flex-col">
-								<label for="name">NAME</label>
+								<label for="name">ORGANIZATION NAME</label>
 								<input
 									type="text"
-									name="name"
+									name="orgName"
 									required
-									placeholder="Enter name"
+									placeholder="Enter your Organization name"
 								/>
 							</div>
 							<div class="forminput flex flex-col">
-								<label for="username">USERNAME</label>
+								<label for="username">TITLE OF OPPORTUNITY</label>
 								<input
-									type="email"
-									name="username"
-									placeholder="Enter email"
+									type="text"
+									name="title"
+									placeholder="Enter title of the opportunity"
 									required
+									wrap
 								/>
 							</div>
 						</div>
-
-						<div class="splitcol-2 flex">
+{{!-- text area for job description --}}
 							<div class="forminput flex flex-col">
-								<label for="pwd">PASSWORD</label>
-								<input
-									type="password"
-									name="password"
-									placeholder="Enter password"
-									required
-								/>
+								<label for="pwd">JOB DESCRIPTION</label>
+								<textarea
+									name="jobDescription" rows="4"
+									placeholder="Enter job description of the opportunity"
+									required></textarea>
 							</div>
-
-							<div class="forminput flex flex-col">
-								<label for="pwdrepeat">CONFIRM PASSWORD</label>
-								<input
-									type="password"
-									name="cnfpassword"
-									placeholder="Repeat password"
-									required
-								/>
-							</div>
-						</div>
-
+{{!-- volunteer required --}}
 						<div class="splitcol-2 flex">
 							<div class="forminput flex flex-col">
 								<label for="country">COUNTRY</label>

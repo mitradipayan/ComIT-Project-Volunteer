@@ -1,15 +1,25 @@
+require("dotenv").config();
+
 const { static } = require("express");
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const path = require("path");
+const cookieParser = require("cookie-parser");
+
 const {
 	renderLoginForm,
 	processLogin,
+	renderLogout,
 } = require("./viewControllers/loginController");
 const {
 	registerUser,
 	renderRegisterForm,
 } = require("./viewControllers/registerController");
+const {
+	renderOpportunity,
+} = require("./viewControllers/opportunityController");
+const { authenticateUser } = require("./middleware/auth");
+
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -28,23 +38,33 @@ app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cookieParser());
+app.use(authenticateUser);
 
 // routes
 // --------HOME----------
 app.get("/", (req, res) => {
-	res.render("home");
+	res.render("home", { loginstatus: null, tag: "Home" });
 });
+
 // ---------LOGIN------------------
 app.get("/login", renderLoginForm);
 app.post("/login", processLogin);
+// ---------LOGOUT-------------
+app.get("/logout", renderLogout);
+
 // ---------REGISTER--------------
 app.get("/register", renderRegisterForm);
 app.post("/register", registerUser);
 
 // ---------OPPORTUNITIES-------------
-app.get("/opportunities", (req, res) => {
-	res.render("opportunities", { layout: "layout1" });
+app.get("/opportunities", renderOpportunity);
+app.get("/createOpportunity", (req, res) => {
+	res.render("createOpportunity", { layout: "loggedinLayout1", tag: "Create Opportunity" })
 });
+
+// ----disable x-powered-by----------
+app.disable("x-powered-by");
 
 // error handlers
 app.use((req, res) => {

@@ -170,7 +170,8 @@
 	border-bottom: 0.1rem solid var(--theme-color);
 }
 
-.forminput input:focus {
+.forminput input:focus,
+.forminput textarea:focus {
 	outline: none;
 }
 
@@ -207,6 +208,19 @@
 
 .forgot a:hover {
 	font-weight: bold;
+}
+
+/* Create Opportunities page form CSS  */
+
+.forminput textarea {
+	height: 10rem;
+	overflow-y: scroll;
+	width: 100%;
+	border: none;
+	font-size: 0.9em;
+	padding: 0.3rem 0.3rem;
+	background-color: #f7f7f7;
+	border-bottom: 0.1rem solid var(--theme-color);
 }
 
 /* Opportunities section styling */
