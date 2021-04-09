@@ -72,8 +72,10 @@ async function createUser(fields) {
 	const foundUser = await findUser(fields.username);
 	if (foundUser) {
 		return { tag: "UserExists", output: foundUser };
-	} else if (!(fields.password === fields.cnfpassword)) {
+	} else if (fields.password !== fields.cnfpassword) {
 		return { tag: "PasswordMismatch", output: null };
+	} else if (!fields.idImgUrl.startsWith("/img/")) {
+		return { tag: "urlbadformat", output: null };
 	} else {
 		let generatedHash = await generateHash(fields.password);
 		if (generatedHash) {

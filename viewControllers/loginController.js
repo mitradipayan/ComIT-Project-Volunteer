@@ -1,14 +1,44 @@
+const { compareSync } = require("bcrypt");
 const User = require("../models/user");
-const { validateLogin } = require("../services/userServices");
+const { validateLogin, findUser } = require("../services/userServices");
 // const { verify } = require("jsonwebtoken");
 
-function renderLoginForm(req, res) {
+async function renderHome(req, res) {
 	if (req.username) {
-		console.log(`renderLoginForm req.username: ${req.username}`);
+		const user = await findUser(req.username).then((res) => {
+			return res;
+		});
 		res.render("home", {
 			layout: req.layout,
-			loginstatus: `Welcomeee ${req.fname.split(" ")[0]}`,
-			tag: "Home",
+			loginstatus:
+				req.category === "individual"
+					? `Welcome ${req.fname.split(" ")[0]}`
+					: `Welcome ${user.name}`,
+			tag:
+				req.category === "individual"
+					? `Welcome ${req.fname.split(" ")[0]}`
+					: `Welcome ${user.name}`,
+		});
+	} else {
+		res.render("home", { loginstatus: null, tag: "Home" });
+	}
+}
+
+async function renderLoginForm(req, res) {
+	const user = await findUser(req.username).then((res) => {
+		return res;
+	});
+	if (req.username) {
+		res.render("home", {
+			layout: req.layout,
+			loginstatus:
+				req.category === "individual"
+					? `Welcome ${req.fname.split(" ")[0]}`
+					: `Welcome ${user.name}`,
+			tag:
+				req.category === "individual"
+					? `Welcome ${req.fname.split(" ")[0]}`
+					: `Welcome ${user.name}`,
 		});
 	}
 	res.render("login", { layout: null, tag: "Login" });
@@ -38,10 +68,13 @@ async function processLogin(req, res, next) {
 		res.cookie("jwToken", jwtString, { httpOnly: true });
 		res.render("home", {
 			layout: "loggedinLayout1",
-			loginstatus: `Welcome ${user.name.split(" ")[0]}`,
+			loginstatus:
+				req.category === "individual"
+					? `Welcome ${req.fname.split(" ")[0]}`
+					: `Welcome ${user.name}`,
 			tag: "Home",
 		});
 	}
 }
 
-module.exports = { renderLoginForm, processLogin, renderLogout };
+module.exports = { renderLoginForm, processLogin, renderLogout, renderHome };

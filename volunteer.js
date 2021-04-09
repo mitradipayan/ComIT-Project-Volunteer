@@ -10,15 +10,17 @@ const {
 	renderLoginForm,
 	processLogin,
 	renderLogout,
+	renderHome,
 } = require("./viewControllers/loginController");
 const {
 	registerUser,
 	renderRegisterForm,
 } = require("./viewControllers/registerController");
 const {
-	renderOpportunity,
+	renderOpportunity, renderCreateOpportunity,
 } = require("./viewControllers/opportunityController");
 const { authenticateUser } = require("./middleware/auth");
+const { createOpportunity } = require("./services/opportunityServices");
 
 const port = process.env.PORT || 3000;
 
@@ -43,9 +45,7 @@ app.use(authenticateUser);
 
 // routes
 // --------HOME----------
-app.get("/", (req, res) => {
-	res.render("home", { loginstatus: null, tag: "Home" });
-});
+app.get("/", renderHome);
 
 // ---------LOGIN------------------
 app.get("/login", renderLoginForm);
@@ -59,16 +59,15 @@ app.post("/register", registerUser);
 
 // ---------OPPORTUNITIES-------------
 app.get("/opportunities", renderOpportunity);
-app.get("/createOpportunity", (req, res) => {
-	res.render("createOpportunity", { layout: "loggedinLayout1", tag: "Create Opportunity" })
-});
+app.get("/createOpportunity", renderCreateOpportunity);
+app.post('/createOpportunity', createOpportunity)
 
 // ----disable x-powered-by----------
 app.disable("x-powered-by");
 
 // error handlers
 app.use((req, res) => {
-	res.status(404).render("404", { layout: "layout1" });
+	res.status(404).render("404", { layout: "main" });
 });
 
 app.use((err, req, res, next) => {

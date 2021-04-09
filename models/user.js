@@ -7,6 +7,7 @@ const entityType = ["organization", "individual"];
 const userSchema = mongoose.Schema({
 	_id: { type: String, default: cuid },
 	name: { type: String, required: true },
+	idImgUrl: { type: String },
 	username: {
 		type: String,
 		required: true,

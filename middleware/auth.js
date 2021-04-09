@@ -8,21 +8,14 @@ async function authenticateUser(req, res, next) {
 		req.layout = "main";
 		next();
 	} else {
-		// const { username, fname, category } = await verifyJWT(requestJWT);
-		const object = await verifyJWT(requestJWT);
-		console.log(`Middleware: ${object.username}`);
-		const username = object.username;
-		const fname = object.fname;
-		const category = object.category;
+		const { username, fname, category } = await verifyJWT(requestJWT);
 		if (!username) {
-			console.log(`No username`);
 			req.layout = "main";
 			next();
 		} else {
-			console.log(`Logged successfully`);
 			req.layout = "loggedinLayout1";
 			req.username = username;
-			req.fname = fname;
+			req.fname = fname.split(" ")[0];
 			req.category = category;
 			next();
 		}

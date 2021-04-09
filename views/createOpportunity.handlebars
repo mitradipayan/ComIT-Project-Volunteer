@@ -17,17 +17,24 @@
 	<body>
 		<div class="container register">
 			<div class="card logo">
+				{{!-- logo --}}
+				<div class="createOpp logo">
+								<div class="logoimage">
+									<img src={{idImgUrl}} alt="Image of ID" />
+								</div>
+							</div>
+				{{!-- header --}}
 				<h2>
 					<i class="fab fa-connectdevelop"></i> <span>Serve</span> the
 					Planet
 				</h2>
 				<br />
-				<h3>Create opportunity for orgName</h3>
+				<h3>Create volunteering opportunity</h3>
 				<br />
 				{{!-- start of form --}}
 				<div class="my-1">
 					<form action="createOpportunity" method="POST">
-						<div class="splitcol-2 flex">
+						{{!-- <div class="splitcol-2 flex">
 							<div class="forminput flex flex-col">
 								<label for="name">ORGANIZATION NAME</label>
 								<input
@@ -36,7 +43,7 @@
 									required
 									placeholder="Enter your Organization name"
 								/>
-							</div>
+							</div> --}}
 							<div class="forminput flex flex-col">
 								<label for="username">TITLE OF OPPORTUNITY</label>
 								<input
@@ -47,7 +54,7 @@
 									wrap
 								/>
 							</div>
-						</div>
+						{{!-- </div> --}}
 {{!-- text area for job description --}}
 							<div class="forminput flex flex-col">
 								<label for="pwd">JOB DESCRIPTION</label>
@@ -57,49 +64,147 @@
 									required></textarea>
 							</div>
 {{!-- volunteer required --}}
-						<div class="splitcol-2 flex">
+						<div class="splitcol-2 my-1 flex">
 							<div class="forminput flex flex-col">
-								<label for="country">COUNTRY</label>
+								<label for="username">VOLUNTEERS REQUIRED</label>
+								<input
+									type="number"
+									name="volunteerRequired"
+									placeholder="Enter number of volunteers required "
+									required
+									wrap
+								/>
+							</div>
+							<div class="forminput flex flex-col">
+								<label for="username">TIME COMMITMENT</label>
+								<input
+									type="text"
+									name="timeCommitment"
+									placeholder="Enter time commitment e.g. 5 hrs/week"
+									required
+									wrap
+								/>
+							</div>
+						</div>
+{{!-- time and duration --}}
+					<div class="splitcol-2 flex">
+							<div class="forminput flex flex-col">
+								<label for="username">TIME COMMITMENT TYPE</label>
 								<div class="custom-select flex flex-col">
-									<select name="country" id="country">
-										<option value="India">India</option>
-										<option value="Canada">Canada</option>
-										<option value="USA">
-											United States
-										</option>
-									</select>
+									<select name="timeCommitmentType" id="timeCommitmentType">
+										<option> Select time commitment type  </option>
+										<option value="all">All</option>
+										<option value="onetime">One time</option>
+										<option value="shortterm">
+											Short Term </option>
+											<option value="longterm">
+											Long Term </option>
+										</select>
 									<span class="custom-arrow"
 										><i class="fas fa-angle-down"></i
 									></span>
 								</div>
 							</div>
 							<div class="forminput flex flex-col">
-								<label for="username">CITY</label>
+								<label for="username">TIME DURATION</label>
 								<input
 									type="text"
-									name="city"
-									placeholder="Enter city"
+									name="timeDuration"
+									placeholder="Duration of work e.g. 1 year, 6 months"
 									required
+									wrap
 								/>
 							</div>
 						</div>
+
+{{!-- activity type and volunteer cause type --}}
+
+<div class="splitcol-2 my-1 flex">
+							<div class="forminput flex flex-col">
+								<label for="activityType">TYPE OF ACTIVITY</label>
+								<div class="custom-select flex flex-col">
+									<select name="activityType" id="activityType">
+										<option> Enter type of activity </option>
+										<option value="systemssupport">System Support</option>
+										<option value="accounting">Accounting</option>
+										<option value="legal">
+											Legal </option>
+											<option value="orgleadership">Org Leadership</option>
+											<option value="research">Research</option>
+										</select>
+									<span class="custom-arrow"
+										><i class="fas fa-angle-down"></i
+									></span>
+								</div>
+							</div>
+							<div class="forminput flex flex-col">
+								<label for="volunteerCauseType">TYPE OF VOLUNTEERING CAUSE</label>
+								<div class="custom-select flex flex-col">
+								<select name="volunteerCauseType" id="volunteerCauseType">
+										<option> Type of volunteering cause </option>
+										<option value="emergency">Emergency Services</option>
+										<option value="swacchbharat">Swacch Bharat</option>
+										<option value="environment">
+											Environment</option>
+											<option value="animalcare">
+											Animal Care</option>
+											<option value="teaching">
+											Teaching</option>
+										</select>
+									<span class="custom-arrow"
+										><i class="fas fa-angle-down"></i
+									></span>
+									</div>
+								</div>
+							</div>
+
+{{!-- location of work - state and city --}}
+						<div class="splitcol-2 flex">
+							<div class="forminput flex flex-col">
+								<label for="state">STATE</label>
+								<div class="custom-select flex flex-col">
+									<select name="state" id="state">
+										<option> Enter location (state) </option>
+										<option value="JH">Jharkhand</option>
+										<option value="KA">Karnataka</option>
+										<option value="MH">
+											Maharashtra </option>
+										</select>
+									<span class="custom-arrow"
+										><i class="fas fa-angle-down"></i
+									></span>
+								</div>
+							</div>
+							<div class="forminput flex flex-col">
+								<label for="city">CITY</label>
+								<div class="custom-select flex flex-col">
+								<select name="city" id="city">
+										<option> Enter location (city) </option>
+										<option value="jamshedpur">Jamshedpur</option>
+										<option value="bangalore">Bangalore</option>
+										<option value="mumbai">
+											Mumbai</option>
+											<option value="pune">
+											Pune</option>
+										</select>
+									<span class="custom-arrow"
+										><i class="fas fa-angle-down"></i
+									></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{!-- message placeholder --}}
 						<p class="py-1 registerMessage">
 							{{#if registerMessage}}
 							<span>{{registerMessage}}</span>
 							{{/if}}</p>
 
-						<button type="submit" class="btn">Register</button>
+						<button type="submit" class="btn">Save Opportunity</button>
 					</form>
 				</div>
 				{{!-- end of form --}}
-				<div id="acclogin">
-					<p>
-						<a href="/login" target="_blank"
-							>Already have an account? Login
-							<i class="fas fa-angle-right"></i>
-						</a>
-					</p>
-				</div>
+				
 			</div>
 		</div>
 	</body>

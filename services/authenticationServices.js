@@ -9,7 +9,6 @@ const jwtOptions = { algorithm: "HS256", expiresIn: "1d" };
 
 // Generates JWT and returns a jwt string
 function generateJWT(user) {
-	console.log(user);
 	const payload = {
 		username: user.username,
 		fname: user.name,
@@ -28,7 +27,7 @@ async function verifyJWT(token) {
 			if (err) {
 				return "jwtVerificationError";
 			} else {
-				return { payload };
+				return payload;
 			}
 		}
 	));

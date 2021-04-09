@@ -99,6 +99,7 @@
 								name="timecommitment"
 								id="all"
 								value="all"
+								checked
 							/>
 							<label for="all" class="searchtitle">
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All</label
@@ -191,9 +192,7 @@
 					<!-- <div class="background"></div> -->
 				</div>
 				<!-- Opportunity cards section -->
-				{{opplist}}
 				<div class="opps">
-
 					{{#each opportunity}}
 					<div class="oppscard card">
 						<div class="card-container">
@@ -211,7 +210,7 @@
 									<p>{{activityType}} - {{volunteerCause}} - {{timeCommitmentType}}</p>
 								</div>
 								<div class="oppdesc">
-									<p>
+									<p>x
 										{{jobDescription}}
 									</p>
 								</div>
@@ -224,7 +223,7 @@
 								<div class="time-hours">
 									<p>
 										<i class="far fa-clock"></i>
-										&nbsp;&nbsp;{{timecommitment}}
+										&nbsp;&nbsp;{{timeCommitment}}
 									</p>
 								</div>
 								<div class="time-duration">

@@ -23,8 +23,8 @@ const cities = ["Bangalore", "Mumbai", "Jamshedpur", "Pune"];
 
 const opportunitySchema = mongoose.Schema({
 	_id: { type: String, default: cuid },
-	orgName: { type: String, required: true },
-	orgLogoUrl: { type: String },
+	// orgName: { type: String, required: true },
+	// orgLogoUrl: { type: String },
 	title: { type: String, required: true },
 	jobDescription: { type: String, required: true },
 	volunteerRequired: { type: Number, required: true },
