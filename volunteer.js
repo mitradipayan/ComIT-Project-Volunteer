@@ -17,7 +17,10 @@ const {
 	renderRegisterForm,
 } = require("./viewControllers/registerController");
 const {
-	renderOpportunity, renderCreateOpportunity,
+	renderOpportunity,
+	renderCreateOpportunity,
+	saveOpportunity,
+	processFilterOpportunity,
 } = require("./viewControllers/opportunityController");
 const { authenticateUser } = require("./middleware/auth");
 const { createOpportunity } = require("./services/opportunityServices");
@@ -59,8 +62,9 @@ app.post("/register", registerUser);
 
 // ---------OPPORTUNITIES-------------
 app.get("/opportunities", renderOpportunity);
+app.post("/opportunities", processFilterOpportunity);
 app.get("/createOpportunity", renderCreateOpportunity);
-app.post('/createOpportunity', createOpportunity)
+app.post("/createOpportunity", saveOpportunity);
 
 // ----disable x-powered-by----------
 app.disable("x-powered-by");
@@ -77,5 +81,4 @@ app.use((err, req, res, next) => {
 // start the server
 app.listen(port, () => {
 	console.log(`Express started server on port ${port}`);
-	// pushOpp();
 });

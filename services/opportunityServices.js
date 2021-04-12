@@ -1,6 +1,6 @@
-const { findOne } = require("../models/opportunity");
 const Opportunity = require("../models/opportunity");
-const { pushOpp } = require("../opp-push");
+const { findUser } = require("./userServices");
+const State = require("../models/states");
 
 async function findOpportunity(title) {
 	const opportunity = await Opportunity.findOne({ title }).exec();
@@ -14,28 +14,54 @@ async function findOpportunity(title) {
 	}
 }
 
-async function createOpportunity(fields) {
-	// const foundOpp = await findOpportunity(fields.title);
-	// if (foundOpp) {
-	// 	return {
-	// 		tag: "Opportunity with same title exists, Opportunity not created",
-	// 		output: null,
-	// 	};
-	// } else {
-	const newOpp = await new Opportunity(fields);
+async function createOpportunity(fields, userObj) {
+	const user = await findUser(userObj.username);
+	const newOpp = new Opportunity({
+		...fields,
+		orgName: user.name,
+		orgLogoUrl: user.idImgUrl,
+	});
 	newOpp.save();
-	console.log(newOpp);
-	// 		return { tag: "New Opportunity successfully created", output: newOpp };
-	// 	}
+	return { tag: "success", output: newOpp };
 }
 
+// Retrieves the list of all opportunities from MongoDB and returns an array
 async function getAllOpportunities() {
-	const allAvailableOpportunities = await Opportunity.find().exec();
-	console.log(allAvailableOpportunities);
+	const allAvailableOpportunities = await Opportunity.find().setOptions({
+		lean: true,
+	});
+
 	return allAvailableOpportunities;
+}
+
+// Retrieves the list of all states from MongoDB and returns an array
+async function getstatesOfIndia() {
+	const states = await State.find().setOptions({ lean: true }).exec();
+	return states;
+}
+
+// ----------getAllOpportunities - FILTERED--------------------------
+async function getFilteredOpportunities(filters) {
+	const allAvailableOpportunities = await Opportunity.find().setOptions({
+		lean: true,
+	});
+
+	let filteredOpportunities = allAvailableOpportunities;
+
+	for (const filter in filters) {
+		if (filters[filter]) {
+			filteredOpportunities = filteredOpportunities.filter(
+				(opportunity) => opportunity[filter] === filters[filter]
+			);
+		}
+	}
+
+	return filteredOpportunities;
 }
 
 module.exports = {
 	createOpportunity,
 	getAllOpportunities,
+	getstatesOfIndia,
+	getFilteredOpportunities,
 };

@@ -45,7 +45,7 @@
 								/>
 							</div> --}}
 							<div class="forminput flex flex-col">
-								<label for="username">TITLE OF OPPORTUNITY</label>
+								<label for="title">TITLE OF OPPORTUNITY</label>
 								<input
 									type="text"
 									name="title"
@@ -57,7 +57,7 @@
 						{{!-- </div> --}}
 {{!-- text area for job description --}}
 							<div class="forminput flex flex-col">
-								<label for="pwd">JOB DESCRIPTION</label>
+								<label for="jobdDescription">JOB DESCRIPTION</label>
 								<textarea
 									name="jobDescription" rows="4"
 									placeholder="Enter job description of the opportunity"
@@ -66,7 +66,7 @@
 {{!-- volunteer required --}}
 						<div class="splitcol-2 my-1 flex">
 							<div class="forminput flex flex-col">
-								<label for="username">VOLUNTEERS REQUIRED</label>
+								<label for="volunteerRequired">VOLUNTEERS REQUIRED</label>
 								<input
 									type="number"
 									name="volunteerRequired"
@@ -76,7 +76,7 @@
 								/>
 							</div>
 							<div class="forminput flex flex-col">
-								<label for="username">TIME COMMITMENT</label>
+								<label for="timeCommitment">TIME COMMITMENT</label>
 								<input
 									type="text"
 									name="timeCommitment"
@@ -89,7 +89,7 @@
 {{!-- time and duration --}}
 					<div class="splitcol-2 flex">
 							<div class="forminput flex flex-col">
-								<label for="username">TIME COMMITMENT TYPE</label>
+								<label for="timeCommitmentType">TIME COMMITMENT TYPE</label>
 								<div class="custom-select flex flex-col">
 									<select name="timeCommitmentType" id="timeCommitmentType">
 										<option> Select time commitment type  </option>
@@ -106,7 +106,7 @@
 								</div>
 							</div>
 							<div class="forminput flex flex-col">
-								<label for="username">TIME DURATION</label>
+								<label for="timeDuration">TIME DURATION</label>
 								<input
 									type="text"
 									name="timeDuration"
@@ -138,9 +138,9 @@
 								</div>
 							</div>
 							<div class="forminput flex flex-col">
-								<label for="volunteerCauseType">TYPE OF VOLUNTEERING CAUSE</label>
+								<label for="volunteerCause">TYPE OF VOLUNTEERING CAUSE</label>
 								<div class="custom-select flex flex-col">
-								<select name="volunteerCauseType" id="volunteerCauseType">
+								<select name="volunteerCause" id="volunteerCause">
 										<option> Type of volunteering cause </option>
 										<option value="emergency">Emergency Services</option>
 										<option value="swacchbharat">Swacch Bharat</option>
@@ -161,14 +161,13 @@
 {{!-- location of work - state and city --}}
 						<div class="splitcol-2 flex">
 							<div class="forminput flex flex-col">
-								<label for="state">STATE</label>
+								<label for="locationState">STATE</label>
 								<div class="custom-select flex flex-col">
-									<select name="state" id="state">
+									<select name="locationState" id="locationState">
 										<option> Enter location (state) </option>
-										<option value="JH">Jharkhand</option>
-										<option value="KA">Karnataka</option>
-										<option value="MH">
-											Maharashtra </option>
+										{{#each statesOfIndia}}
+										<option value="{{stateCode}}">{{stateName}}</option>
+										{{/each}}
 										</select>
 									<span class="custom-arrow"
 										><i class="fas fa-angle-down"></i
@@ -176,9 +175,9 @@
 								</div>
 							</div>
 							<div class="forminput flex flex-col">
-								<label for="city">CITY</label>
+								<label for="locationCity">CITY</label>
 								<div class="custom-select flex flex-col">
-								<select name="city" id="city">
+								<select name="locationCity" id="locationCity">
 										<option> Enter location (city) </option>
 										<option value="jamshedpur">Jamshedpur</option>
 										<option value="bangalore">Bangalore</option>

@@ -2,9 +2,7 @@ const { verifyJWT } = require("../services/authenticationServices");
 
 async function authenticateUser(req, res, next) {
 	const requestJWT = req.cookies.jwToken;
-	console.log(`CookieJWT--->: ${requestJWT}`);
 	if (!requestJWT) {
-		console.log(`No JWT`);
 		req.layout = "main";
 		next();
 	} else {
@@ -15,7 +13,7 @@ async function authenticateUser(req, res, next) {
 		} else {
 			req.layout = "loggedinLayout1";
 			req.username = username;
-			req.fname = fname.split(" ")[0];
+			req.fname = category === "individual" ? fname.split(" ")[0] : fname;
 			req.category = category;
 			next();
 		}

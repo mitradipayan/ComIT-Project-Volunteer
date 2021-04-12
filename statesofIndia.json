@@ -1,0 +1,22 @@
+[
+	{
+		"stateCode": "KA",
+		"stateName": "Karnataka"
+	},
+	{
+		"stateCode": "JH",
+		"stateName": "Jharkhand"
+	},
+	{
+		"stateCode": "MH",
+		"stateName": "Maharashtra"
+	},
+	{
+		"stateCode": "UP",
+		"stateName": "Uttar Pradesh"
+	},
+	{
+		"stateCode": "WB",
+		"stateName": "West Bengal"
+	}
+]

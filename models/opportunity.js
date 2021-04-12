@@ -23,8 +23,8 @@ const cities = ["Bangalore", "Mumbai", "Jamshedpur", "Pune"];
 
 const opportunitySchema = mongoose.Schema({
 	_id: { type: String, default: cuid },
-	// orgName: { type: String, required: true },
-	// orgLogoUrl: { type: String },
+	orgName: { type: String, required: true },
+	orgLogoUrl: { type: String },
 	title: { type: String, required: true },
 	jobDescription: { type: String, required: true },
 	volunteerRequired: { type: Number, required: true },
@@ -33,10 +33,8 @@ const opportunitySchema = mongoose.Schema({
 	timeDuration: { type: String, required: true },
 	activityType: { type: String, enum: activityType },
 	volunteerCause: { type: String, enum: volunteerCauseType },
-	location: {
-		state: { type: String, enum: states },
-		city: { type: String, enum: cities },
-	},
+	locationState: { type: String },
+	locationCity: { type: String },
 });
 
 const Opportunity = mongoose.model("Opportunity", opportunitySchema);

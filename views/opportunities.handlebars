@@ -11,7 +11,7 @@
 				</div>
 				<div id="summary">
 					<h2>
-						Find the topic you are most passionate about, somthing
+						Find the topic you are most passionate about, something
 						you would like to leave a mark in the sands of time,
 						check an organization that is aligned with your goals
 						and apply for the role
@@ -25,62 +25,64 @@
 			<div class="grid-container">
 				<!-- Search bar section -->
 				<div class="search">
-					<div class="background">
-						<p class="searchtitle">Causes that interest me</p>
-						<div class="searchselect">
-							<select
-								name="causes"
-								id="causes"
-								title="Causes that interest me"
-							>
-								<option value="">Choose causes...</option>
-								<option value="relief">
-									Emergency Relief Work
-								</option>
-								<option value="caregiving">Caregiving</option>
-								<option value="swachbharat">
-									Swachh Bharat
-								</option>
-								<option value="animalcare">Animal Care</option>
-								<option value="teaching">Teaching</option>
-							</select>
-							<span class="custom-arrow"
-								><i class="fas fa-angle-down"></i
-							></span>
+					<form action="opportunities" method="POST">
+						<div class="background">
+							<p class="searchtitle">Causes that interest me</p>
+							<div class="searchselect">
+								<select
+									name="volunteerCause"
+									id="volunteerCause"
+									title="Causes that interest me"
+									onchange="getCause()"
+								>
+									<option value="">Choose causes...</option>
+									<option value="relief">
+										Emergency Relief Work
+									</option>
+									<option value="caregiving">Caregiving</option>
+									<option value="swacchbharat">
+										Swachh Bharat
+									</option>
+									<option value="animalcare">Animal Care</option>
+									<option value="teaching">Teaching</option>
+								</select>
+								<span class="custom-arrow"
+									><i class="fas fa-angle-down"></i
+								></span>
+							</div>
 						</div>
-					</div>
 					<div class="background">
 						<p class="searchtitle">How can I help...</p>
 						<div class="searchselect">
 							<select
-								name="causes"
-								id="causes"
+								name="activityType"
+								id="activityType"
 								title="How I can help"
 							>
 								<option value="">Choose activities...</option>
-								<option value="relief" title="IT support">
+								<option value="systemssupport" title="IT support">
 									IT systems support
 								</option>
 								<option
-									value="caregiving"
+									value="accounting"
 									title="Accounting and auditing"
 								>
 									Accounting
 								</option>
 								<option
-									value="swachbharat"
+									value="legal"
 									title="Legal advising, Human rights advocacy, Advocacy "
 								>
 									Legal
 								</option>
 								<option
-									value="animalcare"
+									value="orgleadership"
 									title="Consultant, Advisor"
 								>
 									Organizational leadership
 								</option>
 								<option
-									value="teaching"
+									value="research"
 									title="Data analysis, Evaluation, Measurement, Research, Presentation"
 								>
 									Research
@@ -93,24 +95,24 @@
 					</div>
 					<div class="background">
 						<p class="searchtitle">Time Commitment</p>
-						<div class="option">
-							<input
+						{{!-- <div class="option"> --}}
+							{{!-- <input
 								type="checkbox"
 								name="timecommitment"
 								id="all"
 								value="all"
 								checked
-							/>
-							<label for="all" class="searchtitle">
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All</label
-							>
-						</div>
+							/> --}}
+							{{!-- <label for="all" class="searchtitle">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All</label --}}
+							{{!-- > --}}
+						{{!-- </div> --}}
 						<div class="timecommitment">
 							<div class="option">
 								<input
 									type="radio"
 									id="onetime"
-									name="timecommitment"
+									name="timeCommitmentType"
 									value="onetime"
 								/>
 								<label for="onetime"
@@ -123,11 +125,11 @@
 								<input
 									type="radio"
 									id="shortterm"
-									name="timecommitment"
+									name="timeCommitmentType"
 									value="shortterm"
 								/>
 								<label for="shortterm">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Short term ( <
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Short term ( ~
 									3 months )</label
 								>
 							</div>
@@ -136,7 +138,7 @@
 								<input
 									type="radio"
 									id="longterm"
-									name="timecommitment"
+									name="timeCommitmentType"
 									value="longterm"
 								/>
 								<label for="longterm">
@@ -151,17 +153,19 @@
 						<div class="option">
 							<div class="searchselect">
 								<select
-									name="locpref"
+									name="locationState"
 									id="locpref"
 									title="Location Preference - State"
 								>
 									<option value="">Preferred State</option>
-									<option value="KA" title="Karnataka">
-										Karnataka
+									{{#each statesOfIndia}}
+									<option value={{stateCode}} title={{stateName}}>
+										{{stateName}}
 									</option>
-									<option value="MH" title="Maharashtra">
+									{{/each}}
+									{{!-- <option value="MH" title="Maharashtra">
 										Maharashtra
-									</option>
+									</option> --}}
 								</select>
 								<span class="custom-arrow"
 									><i class="fas fa-angle-down"></i
@@ -171,7 +175,7 @@
 						<div class="option">
 							<div class="searchselect">
 								<select
-									name="locpref"
+									name="locationCity"
 									id="locpref"
 									title="Location Preference - City"
 								>
@@ -189,11 +193,15 @@
 							</div>
 						</div>
 					</div>
+
+					<button type="submit" class="btn" >Filter</button>
+
+					</form>
 					<!-- <div class="background"></div> -->
 				</div>
 				<!-- Opportunity cards section -->
 				<div class="opps">
-					{{#each opportunity}}
+					{{#each opportunityList}}
 					<div class="oppscard card">
 						<div class="card-container">
 							<div class="logo">
@@ -207,10 +215,10 @@
 									<p>{{title}}</p>
 								</div>
 								<div class="activitydesc">
-									<p>{{activityType}} - {{volunteerCause}} - {{timeCommitmentType}}</p>
+									<p style="text-transform: capitalize;">{{activityType}} - {{volunteerCause}} - {{timeCommitmentType}}</p>
 								</div>
 								<div class="oppdesc">
-									<p>x
+									<p>
 										{{jobDescription}}
 									</p>
 								</div>
@@ -247,3 +255,4 @@
 				</div>
 			</div>
 		</section>
+

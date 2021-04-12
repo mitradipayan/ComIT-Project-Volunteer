@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <title>Serve The Planet | {{tag}} </title>
+
 </head>
 <body>
   {{!-- HEADER --}}
@@ -17,6 +18,9 @@
 					<i class="fab fa-connectdevelop"></i> <span>Serve</span> the
 					Planet
 				</h1>
+				<div>
+					<h5 id="usermessage">{{usermessage}}</h5>
+				</div>
 				<div class="login flex flex-spbtw">
 					<h5 id="loginstatus">{{loginstatus}}</h5>
 					<a href="./logout" target=""

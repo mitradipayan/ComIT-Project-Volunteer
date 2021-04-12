@@ -1,6 +1,4 @@
 const mongoose = require("./db");
-const { createOpportunity } = require("./services/opportunityServices");
-
 const opplist = require("./opportunities.json");
 const Opportunity = require("./models/opportunity");
 
@@ -13,4 +11,4 @@ const pushOpp = async function () {
 	mongoose.disconnect();
 };
 
-// pushOpp();
+pushOpp();

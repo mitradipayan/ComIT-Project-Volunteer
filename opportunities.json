@@ -10,10 +10,8 @@
 		"timeDuration": "3 months",
 		"activityType": "systemssupport",
 		"volunteerCause": "animalcare",
-		"location": {
-			"state": "KA",
-			"city": "Bangalore"
-		}
+		"locationState": "KA",
+		"locationCity": "Bangalore"
 	},
 
 	{
@@ -27,10 +25,8 @@
 		"timeDuration": "1 year",
 		"activityType": "orgleadership",
 		"volunteerCause": "environment",
-		"location": {
-			"state": "KA",
-			"city": "Bangalore"
-		}
+		"locationState": "KA",
+		"locationCity": "Bangalore"
 	},
 
 	{
@@ -44,10 +40,8 @@
 		"timeDuration": "15 days",
 		"activityType": "research",
 		"volunteerCause": "swacchbharat",
-		"location": {
-			"state": "MH",
-			"city": "Pune"
-		}
+		"locationState": "MH",
+		"locationCity": "Pune"
 	},
 
 	{
@@ -61,10 +55,8 @@
 		"timeDuration": "1 year",
 		"activityType": "orgleadership",
 		"volunteerCause": "caregiving",
-		"location": {
-			"state": "KA",
-			"city": "Bangalore"
-		}
+		"locationState": "KA",
+		"locationCity": "Bangalore"
 	},
 
 	{
@@ -78,28 +70,7 @@
 		"timeDuration": "1 month",
 		"activityType": "accounting",
 		"volunteerCause": "caregiving",
-		"location": {
-			"state": "MH",
-			"city": "Mumbai"
-		}
-	},
-
-	{
-		"orgName": "Isha Foundation",
-		"orgLogoUrl": "/img/isha.png",
-		"title": "Cauvery Calling",
-		"jobDescription": "The job involves planting saplings, surveying land, coordinating with farmers and village elders, collecting funds and running campaigns to gain public support for the tree plantation drive",
-		"volunteerRequired": "25",
-		"timeCommitment": "3 hours/week",
-		"timeCommitmentType": "longterm",
-		"timeDuration": "1 year",
-		"activityType": "orgleadership",
-		"volunteerCause": "environment",
-		"location": {
-			"state": "JH",
-			"city": "Jamshedpur"
-		}
+		"locationState": "MH",
+		"locationCity": "Mumbai"
 	}
 ]
-
-
